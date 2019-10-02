@@ -41,10 +41,9 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 let nav = document.querySelectorAll('nav a');
-for (let i = 0; i < 6; i++) {
-    nav[i].textContent = siteContent.nav[`nav-item-${i + 1}`];
-    nav[i].style.color = 'green';
-}
+
+nav.forEach((item, index) => item.textContent = siteContent["nav"][`nav-item-${index + 1}`])
+nav.forEach((item) => item.style.color = 'green');
 
 // cta
 let ctaH1 = document.querySelector('.cta .cta-text h1');
