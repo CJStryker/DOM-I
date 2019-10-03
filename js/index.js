@@ -43,17 +43,23 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 // nav
 let nav = document.querySelectorAll('a');
-nav.forEach((item, index) => item.textContent = siteContent["nav"][`nav-item-${index + 1}`])
-nav.forEach((item) => item.style.color = 'green');
+nav.forEach((item, index) => {
+    item.textContent = siteContent["nav"][`nav-item-${index + 1}`];
+    item.style.color = 'green';
+});
 
 // extra nav items
 let nav2 = document.querySelector('nav');
 let navI = document.createElement('a');
 navI.textContent = 'HEY';
+navI.href = '#';
+navI.style.color = 'blue';
 nav2.prepend(navI);
 
 let tatL = document.createElement('a');
 tatL.textContent = 'LISTEN';
+tatL.href = '#';
+tatL.style.color = 'purple';
 nav2.append(tatL);
 
 // cta
@@ -63,6 +69,7 @@ let ctaImg = document.getElementById('cta-img');
 
 ctaImg.setAttribute('src', siteContent.cta["img-src"]);
 ctaH1.textContent = siteContent.cta.h1;
+//ctaH1.style.width = '40px';
 ctaBtn.textContent = siteContent.cta.button;
 
 // main content
