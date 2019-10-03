@@ -68,8 +68,9 @@ let ctaBtn = document.querySelector('.cta .cta-text button');
 let ctaImg = document.getElementById('cta-img');
 
 ctaImg.setAttribute('src', siteContent.cta["img-src"]);
-ctaH1.textContent = siteContent.cta.h1;
+ctaH1.innerHTML = siteContent.cta.h1.split(' ').join('<br>');
 //ctaH1.style.width = '40px';
+//ctaH1.style.textAlign = 'left';
 ctaBtn.textContent = siteContent.cta.button;
 
 // main content
@@ -99,7 +100,7 @@ let contactH4 = document.querySelector('.contact h4');
 let contactP = document.querySelectorAll('.contact p');
 
 contactH4.textContent = siteContent.contact["contact-h4"];
-contactP[0].textContent = siteContent.contact.address;
+contactP[0].innerHTML = siteContent.contact.address.split('t S').join('t<br>S');
 contactP[1].textContent = siteContent.contact.phone;
 contactP[2].textContent = siteContent.contact.email;
 
