@@ -40,10 +40,21 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
-let nav = document.querySelectorAll('nav a');
 
+// nav
+let nav = document.querySelectorAll('a');
 nav.forEach((item, index) => item.textContent = siteContent["nav"][`nav-item-${index + 1}`])
 nav.forEach((item) => item.style.color = 'green');
+
+// extra nav items
+let nav2 = document.querySelector('nav');
+let navI = document.createElement('a');
+navI.textContent = 'HEY';
+nav2.prepend(navI);
+
+let tatL = document.createElement('a');
+tatL.textContent = 'LISTEN';
+nav2.append(tatL);
 
 // cta
 let ctaH1 = document.querySelector('.cta .cta-text h1');
